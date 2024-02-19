@@ -17,10 +17,12 @@ https://kh-guard.tistory.com/31
 # 1. Install
 # "전체"
 kubectl create namespace argocd
+
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # "특정 기능 제외"
 kubectl create namespace argocd
+
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 
 # 2. CLI Download
