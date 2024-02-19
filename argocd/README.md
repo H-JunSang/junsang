@@ -35,5 +35,7 @@ brew install argocd
 kubectl patch svc argocd-server -n argocd -p '{"spec":{"type":"LoadBalancer"}}'
 
 # "포트 포워딩"
+kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-'kubectl port-forward svc/argocd-server -n argocd 8080:443'
+# Git Token Key
+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
