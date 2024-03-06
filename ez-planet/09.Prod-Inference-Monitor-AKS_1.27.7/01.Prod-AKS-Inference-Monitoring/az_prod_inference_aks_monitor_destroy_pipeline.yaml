@@ -1,0 +1,59 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  name: ubuntu-self-host
+  #vmImage: ubuntu-latest
+
+parameters:
+    # Resource Group
+  - name: rgname
+    type: string
+    default: EZ-Planet-Terraform-IaC-States
+    # 스토리지 어카운트 이름
+  - name: stgaccount
+    type: string
+    default: laontfstate01
+    # 컨테이너 이름
+  - name: container
+    type: string
+    default: laon-ez-planet-prod-tfstate
+    # tfstate 파일 이름
+  - name: key
+    type: string
+    default: 'laon_ez_planet_prod_aks_inference_monitoring.tfstate'
+stages:
+  - stage: Plan
+    displayName: Plan
+    jobs:
+      - job:
+            
+  - stage: destroy
+    displayName: terraform destroy
+    jobs:
+      - job: 
+        steps:
+        
+        - task: TerraformTaskV4@4
+          displayName: terraform init
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/01.Prod-AKS-Inference-Monitoring'
+            backendServiceArm: 'Laon-Shared-Service-Connection'
+            backendAzureRmResourceGroupName: ${{parameters.rgname}}
+            backendAzureRmStorageAccountName: ${{parameters.stgaccount}}
+            backendAzureRmContainerName: ${{parameters.container}}
+            backendAzureRmKey: ${{parameters.key}}
+
+        - task: TerraformTaskV4@4
+          displayName: terraform destroy
+          inputs:
+            provider: 'azurerm'
+            command: 'destroy'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/01.Prod-AKS-Inference-Monitoring'
+            environmentServiceNameAzureRM: 'Laon-Prod-Service-Connection'

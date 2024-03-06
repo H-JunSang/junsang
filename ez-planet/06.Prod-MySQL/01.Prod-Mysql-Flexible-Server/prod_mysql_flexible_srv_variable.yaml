@@ -1,0 +1,47 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+##################################################################################
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_tag_environment: "Prod" # For Prod Resource Tags
+billing_tag: Prod-MySql
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod mysql Subnet Ids To Assign To Route Table
+prod_mysql_subnet_name: PaaS-Prod-Mysql-Subnet # For Prod Vnet Mysql Subnet name
+prod_mysql_subnet_prefixs: ["10.122.64.32/28"] # For Prod Vnet Mysql Subnet prefix
+
+# For Prod Subnet Service Delegration
+delegration_name: mysql
+service_delegation_name: "Microsoft.DBforMySQL/flexibleServers"
+actions: ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+
+# For Prod Mysql Private DNS zone
+prod_mysql_private_dns_zone: "ezplanet-prod.private.mysql.database.azure.com"
+prod_mysql_private_link_name: Prod-vNet-Link
+laonpeople_mgmt_virutal_link: laonpeople-mgmt-vnet-link
+
+# For Prod Mysql
+prod_mysql_name: ez-planet-prod-mysql-v8
+admin_username: ezpadmin
+admin_password: Laon0125!@#$
+backup_retention_days: 7
+geo_redundant_backup_enabled: false
+sku_name: "GP_Standard_D2ds_v4"
+mysql_version: "8.0.21"
+availability_zone: "1"
+storage_iops: "3200"
+storage_capacity: "500"
+
+# For Prod MySql Security Group
+prod_mysql_nsg_name: PaaS-Prod-Mysql-NSG
+
+# Mgmt 네트워크 정보
+laonpeople_mgmt_virtual_network_id: /subscriptions/6c8c61e2-16fd-4d19-a8df-3f4cc501ee62/resourceGroups/Laonpeople-Mgmt-RG/providers/Microsoft.Network/virtualNetworks/Laonpeople-Mgmt-vNET
