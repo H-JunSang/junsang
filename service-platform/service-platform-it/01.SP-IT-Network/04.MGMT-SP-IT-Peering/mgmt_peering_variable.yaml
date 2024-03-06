@@ -1,0 +1,16 @@
+ # For Region
+location: koreacentral # For Region
+
+# Laonpeople-MGMT Resource
+mgmt_resource_group_name: Laonpeople-Mgmt-RG
+mgmt_virtual_network_name: Laonpeople-Mgmt-vNET
+
+# For Mgmt virtual network To SP-IT virtual network peering
+paas_mgmt_to_sp_it: Laonpeople-Mgmt-To-Service-Platform-IT # For Mgmt-SP-IT 피어링 name
+
+# For Mgmt virtual network peering Policy
+mgmt_allow_network_access: true # Access Prod network From remote networks
+mgmt_allow_forward_traffic: true # Allow Traffic From remote networks
+mgmt_allow_gateway_transit: true # Does not act as transit gateway
+mgmt_use_remote_gateway: false # use remote networks as transit gateway
+service_platform_virtual_network_id: /subscriptions/0ee9519d-f009-44bc-8cb2-26df802ee40d/resourceGroups/Laon-Service-Platform-IT-RG/providers/Microsoft.Network/virtualNetworks/Laon-Service-Platform-IT-vNET

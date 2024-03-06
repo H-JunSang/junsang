@@ -1,0 +1,35 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+##################################################################################
+# For SP-IT-Common Resource Group and resource tags
+sp_it_common_rg: Service-Platform-IT-RG # For SP-IT Resource Group
+sp_it_common_tag_creator: "Laonpeople" # For SP-IT Resource Tags
+sp_it_common_tag_environment: "SP-IT" # For SP-IT Resource Tags
+
+# For SP-IT virtual network variable
+sp_it_common_vnet: "Service-Platform-IT-vNET" # For SP-IT Vnet Name
+
+# For SP-IT Subnet Ids To Assign To Network Security Groups
+sp_it_common_subnet: Service-Platform-IT-Subnet # For SP-IT Vnet Subnet name
+
+# For SP-IT Route Table
+sp_it_route_table: Service-Platform-IT-RT
+
+# For SP-IT Route Entries
+sp_it_routes: # For Prod Routes
+- name: Service-Platform-IT-Default-Route
+  address_prefix: "0.0.0.0/0"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+- name: On-Prem-Dev-Zone-Route
+  address_prefix: "10.100.0.0/22"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+- name: On-Prem-Local-Zone-Route
+  address_prefix: "10.10.100.0/23"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"

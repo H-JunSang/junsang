@@ -1,0 +1,22 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+##################################################################################
+# For SP-IT-Common Resource Group and resource tags
+sp_it_common_rg: Service-Platform-IT-RG # For SP-IT-Common Resource Group
+sp_it_common_tag_creator: "Laonpeople" # For SP-IT-Common Resource Tags
+sp_it_common_tag_environment: "SP-IT" # For SP-IT-Common Resource Tags
+
+# For SP-IT virtual network variable
+sp_it_common_vnet: "Service-Platform-IT-vNET" # For SP-IT-Common Vnet Name
+
+# For SP-IT Subnet Ids To Assign To Network Security Groups
+sp_it_common_storage_subnet: Service-Platform-IT-Storage-Subnet # For SP-IT-Common Vnet 스토리지 Subnet name
+sp_it_common_subnet: Service-Platform-IT-Subnet # For SP-IT-Common Vnet Subnet name
+
+# For SP-IT virtual network security groups
+sp_it_common_security_group: Service-Platform-IT-NSG # For SP-IT-Common NSG name
+sp_it_common_storage_security_group: Service-Platform-IT-Storage-NSG # For SP-IT-Common Storage NSG name

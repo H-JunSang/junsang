@@ -1,0 +1,22 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+##################################################################################
+# For SP-IT-Common Resource Group and resource tags
+sp_it_common_rg: Service-Platform-IT-RG # For SP-IT-Common Resource Group
+sp_it_common_tag_creator: "Laonpeople" # For SP-IT-Common Resource Tags
+sp_it_common_tag_environment: "SP-IT" # For SP-IT-Common Resource Tags
+billing_tag: Service-Platform-IT-Networks
+billing_rg_tag: Service-Platform-IT-RG
+
+# For SP-IT virtual network variable
+sp_it_common_vnet: "Service-Platform-IT-vNET" # For SP-IT-Common Vnet Name
+sp_it_common_address_space: "10.123.0.0/16" # For SP-IT-Common Vnet CIDR
+sp_it_common_subnets: # For SP-IT-Common Vnet Subnets
+- name: Service-Platform-IT-Subnet # For SP-IT-Common Vnet k8s Subnet name
+  iprange: "10.123.0.0/18" # For SP-IT-Common Vnet 쿠버네티스 Subnet prefix
+- name: Service-Platform-IT-Storage-Subnet # For SP-IT-Common Vnet 스토리지 Subnet name
+  iprange: "10.123.64.0/28" # For SP-IT-Common Vnet 스토리지 Subnet prefix

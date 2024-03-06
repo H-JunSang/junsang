@@ -1,0 +1,151 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+# For SP-IT virtual network variable
+sp_it_common_vnet: "Service-Platform-IT-vNET" # For SP-IT-Common Vnet Name
+
+# For Shared virtual network variable
+shared_vnet: "EZ-Planet-PaaS-Shared-vNET" # For Prod Vnet Name
+
+# For Shared virtual network variable
+it_vnet: "EZ-Planet-PaaS-IT-vNET" # For Prod Vnet Name
+
+##################################################################################
+# For SP-IT-Common Resource Group and resource tags
+sharedrg: EZ-Planet-PaaS-Shared-RG # For Shared Resource Group
+it_rg: EZ-Planet-PaaS-IT-RG # For IT Resource Group
+sp_it_common_rg: Service-Platform-IT-RG # For SP-IT-Common Resource Group
+sp_it_common_tag_creator: "Laonpeople" # For SP-IT-Common Resource Tags
+sp_it_common_tag_environment: "SP-IT" # For SP-IT-Common Resource Tags
+billing_tag: Service-Platform-IT-AKS
+billing_workspace_tag: Service-Platform-IT-logspace
+
+# For SP-IT Subnet Ids To Assign To Network Security Groups
+sp_it_common_subnet: Service-Platform-IT-Subnet # For SP-IT-Common Vnet Subnet name
+
+# 쿠버네티스 Service Principal(쿠버네티스 클러스터 배포 전 Azure CLI 사용하여 생성)
+service_appid: "204da5c8-3b25-433f-bcf7-f77abd4c6875" # Service Principal 앱 ID
+service_secret: "A2s8Q~WQxDpGqgceNDMjAx9Zb36v4ukpYbLgvdhF" # Service Principal 시크릿
+
+# Azure 쿠버네티스 공통 변수
+network_plugin: "azure" # 네트워크 플러그인
+network_policy: "calico" # 네트워크 정책
+loadbalancer_sku: "standard" # 로드밸런서 SKU
+private_cluster: "true" # 프라이빗 클러스터
+k8s_sku_tier: "Standard" # 쿠버네티스 SKU
+k8s_version: "1.27.7" # 쿠버네티스 버전
+auto_scale_false: "false" # 오토스케일링 여부
+auto_scale_true: "true" # 오토스케일링 여부
+disk_driver_enabled: "true" # CSI 드라이버 Enable
+file_driver_enabled: "true" # 파일 드라이버 Enable
+publisher: "Microsoft" # 퍼블리셔(마이크로소프트 제공)
+product: "OMSGallery/ContainerInsights" # 프로덕트(컨테이너 인사이트)
+azure_policy_enabled: "true" # Azure 정책 
+secret_rotation_enabled: "true" # 시크릿 로테이션 
+secret_rotation_interval: "10080m" # 시크릿 로테이션 인터벌(7일 설정)
+
+# For SP-IT 쿠버네티스
+sp_it_shared_node_resorce_group: "Service-Platform-IT-VMSS-RG" # 쿠버네티스 노드 풀 리소스 그룹
+sp_it_shared_k8s_name: "Service-Platform-IT-K8S-1-27-7" # SP-IT 쿠버네티스 클러스터 이름
+sp_it_shared_k8s_dns_prefix: "service-platform-k8s" # SP-IT 쿠버네티스 DNS 프리픽스
+sp_it_shared_k8s_service_cidr: "10.13.0.0/16" # SP-IT 쿠버네티스 서비스 CIDR
+sp_it_shared_k8s_dns_service_ip: "10.13.0.10" # SP-IT 쿠버네티스 DNS 주소
+###
+sp_it_shared_agent_pool: "agentpool" # SP-IT 쿠버네티스 에이전트 풀 이름, 리눅스 노드 풀의 경우 최대 11자리, 윈도우 노드 풀 최대 6자리
+sp_it_shared_agent_pool_count: "1" # SP-IT 쿠버네티스 에이전트 풀 노드 대수
+sp_it_shared_agent_pool_vm_size: "Standard_D2s_v5" # SP-IT 쿠버네티스 에이전트 풀 가상 머신 스펙
+sp_it_shared_agent_node_label_prefix: "Environment" # SP-IT 쿠버네티스 에이전트 풀 노드 프리픽스
+sp_it_shared_agent_node_label: "sp-it-agent" # SP-IT 쿠버네티스 에이전트 풀 노드 레이블
+###
+sp_it_node_max_pods_count: "110" # 쿠버네티스 사용자 노드 최대 파드 대수
+sp_it_node_pool_mode: "User" # 쿠버네티스 사용자 노드 풀 모드
+###
+sp_it_shared_node_min_count: "3" # SP-IT 쿠버네티스 사용자 노드 풀 최소 노드 대수
+sp_it_shared_node_max_count: "4" # SP-IT 쿠버네티스 사용자 노드 풀 최대 노드 대수
+sp_it_shared_node_pool: "spitshared" # SP-IT 쿠버네티스 사용자 노드 풀 이름, 리눅스 노드 풀의 경우 최대 11자리, 윈도우 노드 풀 최대 6자리
+sp_it_shared_node_vm_size: "Standard_D8ds_v5" # SP-IT 쿠버네티스 사용자 노드 풀 가상머신 스펙
+sp_it_shared_node_pool_label_prefix_1: "environment" # spitshared 노드 풀 레이블 프리픽스
+sp_it_shared_node_pool_label_prefix_2: "product" # spitshared 노드 풀 레이블 프리픽스
+sp_it_shared_node_pool_label_prefix_3: "resource" # spitshared 노드 풀 레이블 프리픽스
+sp_it_shared_node_pool_label_prefix_4: "node-category" # spitshared 노드 풀 레이블 프리픽스
+sp_it_shared_node_pool_label_prefix_5: "service-category" # spitshared 노드 풀 레이블 프리픽스
+sp_it_shared_node_pool_label_1: "it" # spitshared 노드 풀 레이블
+sp_it_shared_node_pool_label_2: "service-platform" # spitshared 노드 풀 레이블
+sp_it_shared_node_pool_label_3: "aks" # spitshared 노드 풀 레이블
+sp_it_shared_node_pool_label_4: "service-platform" # spitshared 노드 풀 레이블
+sp_it_shared_node_pool_label_5: "shared" # spitshared 노드 풀 레이블
+###
+sp_it_service_node_min_count: "1" # SP-IT 쿠버네티스 사용자 노드 풀 최소 노드 대수
+sp_it_service_node_max_count: "2" # SP-IT 쿠버네티스 사용자 노드 풀 최대 노드 대수
+sp_it_service_node_pool: "spitsvc" # SP-IT 쿠버네티스 사용자 노드 풀 이름, 리눅스 노드 풀의 경우 최대 11자리, 윈도우 노드 풀 최대 6자리
+sp_it_service_node_vm_size: "Standard_D2as_v5" # SP-IT 쿠버네티스 사용자 노드 풀 가상머신 스펙
+sp_it_service_node_pool_label_prefix_1: "environment" # spitshared 노드 풀 레이블 프리픽스
+sp_it_service_node_pool_label_prefix_2: "product" # spitshared 노드 풀 레이블 프리픽스
+sp_it_service_node_pool_label_prefix_3: "resource" # spitshared 노드 풀 레이블 프리픽스
+sp_it_service_node_pool_label_prefix_4: "node-category" # spitshared 노드 풀 레이블 프리픽스
+sp_it_service_node_pool_label_prefix_5: "service-category" # spitshared 노드 풀 레이블 프리픽스
+sp_it_service_node_pool_label_1: "it" # spitshared 노드 풀 레이블
+sp_it_service_node_pool_label_2: "service-platform" # spitshared 노드 풀 레이블
+sp_it_service_node_pool_label_3: "aks" # spitshared 노드 풀 레이블
+sp_it_service_node_pool_label_4: "service-platform" # spitshared 노드 풀 레이블
+sp_it_service_node_pool_label_5: "service" # spitshared 노드 풀 레이블
+###
+sp_it_shared_alert_action_group: "Service-Platform-IT-K8s-Alert-Group" # 알람 액션 그룹
+sp_it_shared_cpu_alert_short_name: "CpuAlert" # CPU 알람 Short 이름
+sp_it_shared_alert_email_admin: "Service-Platform-IT-k8sadmin" # 알람 메일 관리자
+sp_it_shared_alert_email_address: "hw038@laonpeople.com" # 알람 메일 주소
+sp_it_shared_cpu_alert_name: "Service-Platform-IT-K8s-Cpu-Alert" # CPU 알람 이름
+sp_it_shared_cpu_metric_namespace: "Microsoft.ContainerService/managedClusters" # CPU 메트릭 이름 스페이스
+sp_it_shared_cpu_metric_name: "node_cpu_usage_percentage" # CPU 메트릭 이름
+sp_it_shared_cpu_aggregate: "Average" # CPU 사용 합계
+sp_it_shared_cpu_operator: "GreaterThan" # CPU 오퍼레이터
+sp_it_shared_cpu_threshold: "80" # CPU 쓰레드홀드
+sp_it_shared_mem_alert_name: "Service-Platform-IT-K8s-Mem-Alert" # 메모리 알람 이름
+sp_it_shared_mem_metric_namespace: "Microsoft.ContainerService/managedClusters" # 메모리 메트릭 이름 스페이스
+sp_it_shared_mem_metric_name: "node_memory_working_set_percentage" # 메모리 메트릭 이름
+sp_it_shared_mem_aggregate: "Average" # 메모리 사용 합계
+sp_it_shared_mem_operator: "GreaterThan" # 메모리 오퍼레이터
+sp_it_shared_mem_threshold: "80" # 메모리 쓰레드홀드
+sp_it_shared_log_workspace_name: "Service-Platform-IT-K8s-log-workspace" # 로그 WorkSpace 이름
+sp_it_shared_log_workspace_name_sku: "PerGB2018" # 로그 Workspace SKU
+sp_it_shared_log_solution_name: "ContainerInsights" # 로드 솔루션 이름
+sp_it_shared_diag_name: "Service-Platform-IT-Shared-K8s-diagnose" # 진단 이름
+sp_it_shared_k8s_log: # 쿠버네티스 로깅
+- name: "cloud-controller-manager" # 컨트롤러 Manager
+- name: "cluster-autoscaler" # 클러스터 오토스케이러
+- name: "csi-azuredisk-controller" # csi disk 컨트롤러
+- name: "csi-azurefile-controller" # csi 파일 컨트롤러
+- name: "csi-snapshot-controller" # csi 스냅샷 컨트롤러
+- name: "kube-apiserver" # 쿠버네티스 API 서버
+- name: "kube-controller-manager" # 쿠버네티스 컨트롤러 Manager
+- name: "kube-scheduler" # 쿠버네티스 스케쥴러
+sp_it_shared_k8s_metric: # 쿠버네티스 메트릭
+- name: "AllMetrics" # 모든 메트릭
+sp_it_shared_k8s_metric_enabled: true # 메트릭 활성화
+###
+sp_it_service_diag_name: "Service-Platform-IT-Service-K8s-diagnose" # 진단 이름
+sp_it_service_k8s_log: # 쿠버네티스 로깅
+- name: "cloud-controller-manager" # 컨트롤러 Manager
+- name: "cluster-autoscaler" # 클러스터 오토스케이러
+- name: "csi-azuredisk-controller" # csi disk 컨트롤러
+- name: "csi-azurefile-controller" # csi 파일 컨트롤러
+- name: "csi-snapshot-controller" # csi 스냅샷 컨트롤러
+- name: "kube-apiserver" # 쿠버네티스 API 서버
+- name: "kube-controller-manager" # 쿠버네티스 컨트롤러 Manager
+- name: "kube-scheduler" # 쿠버네티스 스케쥴러
+sp_it_service_k8s_metric: # 쿠버네티스 메트릭
+- name: "AllMetrics" # 모든 메트릭
+sp_it_service_k8s_metric_enabled: true # 메트릭 활성화
+
+# For Common 쿠버네티스 Private Endpoint
+sp_it_private_dns_zone: "service-platform-it.privatelink.koreacentral.azmk8s.io"
+shared_virtual_link: ez-planet-paas-shared-vnet-link
+it_virtual_link: ez-planet-paas-it-vnet-link
+sp_it_virtual_link: service-platform-it-vnet-link
+laonpeople_mgmt_virutal_link: laonpeople-mgmt-vnet-link
+shared_virtual_network_id: /subscriptions/d8873738-1e0a-4688-9b53-5ce13f0073a9/resourceGroups/EZ-Planet-PaaS-Shared-RG/providers/Microsoft.Network/virtualNetworks/EZ-Planet-PaaS-Shared-vNET
+laonpeople_mgmt_virtual_network_id: /subscriptions/6c8c61e2-16fd-4d19-a8df-3f4cc501ee62/resourceGroups/Laonpeople-Mgmt-RG/providers/Microsoft.Network/virtualNetworks/Laonpeople-Mgmt-vNET
+it_virtual_network_id: /subscriptions/9c5e3a78-dc4a-4367-82dc-a4e4c261425a/resourceGroups/EZ-Planet-PaaS-IT-RG/providers/Microsoft.Network/virtualNetworks/EZ-Planet-PaaS-IT-vNET

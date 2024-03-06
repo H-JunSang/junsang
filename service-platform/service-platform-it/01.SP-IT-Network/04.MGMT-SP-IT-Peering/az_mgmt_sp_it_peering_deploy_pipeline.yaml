@@ -1,0 +1,89 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  name: ubuntu-self-host
+  #vmImage: ubuntu-latest
+
+parameters:
+    # Resource Group
+  - name: rgname
+    type: string
+    default: EZ-Planet-Terraform-IaC-States
+    # 스토리지 어카운트 이름
+  - name: stgaccount
+    type: string
+    default: laontfstate01
+    # 컨테이너 이름
+  - name: container
+    type: string
+    default: laon-mgmt-tfstate
+    # tfstate 파일 이름
+  - name: key
+    type: string
+    default: 'mgmt_laon_service_platform_it_network_peering.tfstate'
+stages:
+  - stage: Plan
+    displayName: Plan
+    jobs:
+      - job:
+        steps:
+        
+        - task: TerraformTaskV4@4
+          displayName: terraform init
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/04.MGMT-SP-IT-Peering'
+            backendServiceArm: 'Laon-Shared-Service-Connection'
+            backendAzureRmResourceGroupName: ${{parameters.rgname}}
+            backendAzureRmStorageAccountName: ${{parameters.stgaccount}}
+            backendAzureRmContainerName: ${{parameters.container}}
+            backendAzureRmKey: ${{parameters.key}}
+            
+        - task: TerraformTaskV4@4
+          displayName: terraform validate
+          inputs:
+            provider: 'azurerm'
+            command: 'validate'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/04.MGMT-SP-IT-Peering'
+
+        - task: TerraformTaskV4@4
+          name: terraformPlan
+          displayName: terraform plan
+          inputs:
+            provider: 'azurerm'
+            command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/04.MGMT-SP-IT-Peering'
+            commandOptions: '-out main.tfplan'
+            environmentServiceNameAzureRM: 'Laon-Mgmt-Service-Connection'
+            
+  - stage: apply
+    displayName: terraform apply
+    jobs:
+      - job:
+        steps:
+        
+        - task: TerraformTaskV4@4
+          displayName: terraform init
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/04.MGMT-SP-IT-Peering'
+            backendServiceArm: 'Laon-Shared-Service-Connection'
+            backendAzureRmResourceGroupName: ${{parameters.rgname}}
+            backendAzureRmStorageAccountName: ${{parameters.stgaccount}}
+            backendAzureRmContainerName: ${{parameters.container}}
+            backendAzureRmKey: ${{parameters.key}}
+            
+        - task: TerraformTaskV4@4
+          displayName: terraform apply
+          inputs:
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/04.MGMT-SP-IT-Peering'
+            environmentServiceNameAzureRM: 'Laon-Mgmt-Service-Connection'
