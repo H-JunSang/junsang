@@ -1,0 +1,27 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# For Prod Resource Group, location and resource tags
+prodrg: PaaS-Prod-RG # For Shared Resource Group
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Shared Vnet Name
+
+# For Mgmt virtual network To Prod virtual network peering
+paas_mgmt_to_prod: Laonpeople-Mgmt-To-EZ-Planet-PaaS-Prod # For Mgmt-Prod 피어링 name
+
+# For Mgmt virtual network peering Policy
+mgmt_allow_network_access: true # Access Prod network From remote networks
+mgmt_allow_forward_traffic: true # Allow Traffic From remote networks
+mgmt_allow_gateway_transit: true # Does not act as transit gateway
+mgmt_use_remote_gateway: false # use remote networks as transit gateway
+
+
+# Laonpeople-MGMT Resource
+mgmt_resource_group_name: Laonpeople-Mgmt-RG
+mgmt_virtual_network_name: Laonpeople-Mgmt-vNET
+prod_virtual_network_id: /subscriptions/379817b0-f170-4c00-a982-d4fed350655f/resourceGroups/EZ-Planet-PaaS-Prod-RG/providers/Microsoft.Network/virtualNetworks/EZ-Planet-PaaS-Prod-vNET
+

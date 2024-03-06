@@ -1,0 +1,133 @@
+EZ-Planet 프로덕션 데브옵스 Service Principal
+{
+  "appId": "4914aa86-4072-43ac-ac95-5e47b12c1a6a",
+  "displayName": "EZ-Planet-PaaS-Prod-Devops-SP",
+  "password": "d5s8Q~0cP~cT7gZgfrruUZjhKBhw5uQK0WlORcNY",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+EZ-Planet Shared 데브옵스 Service Principal
+{
+  "appId": "8966766e-b9e0-42fd-997a-6460fa9cc849",
+  "displayName": "EZ-Planet-PaaS-Shared-Devops-SP",
+  "password": "CP.8Q~tAlTml_yai.Oo49YYOW8PXW_CaY7bT3dc7",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+서비스 프랫폼 Prod 데브옵스 Service Principal
+{
+  "appId": "d9d76a85-57e8-4bd1-b600-69792939b0fc",
+  "displayName": "Laon-Service-Platform-Prod-Devops-SP",
+  "password": "oHp8Q~-iMvIBCkfw~vUfv3T6HxSY5QoQd7RGMcrX",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+서비스 프랫폼 IT 데브옵스 Service Principal
+{
+  "appId": "27225c3b-fff8-4fee-b7cc-6ffa0f820e83",
+  "displayName": "Laon-Service-Platform-IT-Devops-SP",
+  "password": "D1D8Q~wtnXNOociEuSTRsZ5rHM94ilKXiDpSOar6",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+Laon-MGMT 데브옵스 Service Principal
+{
+  "appId": "aed059b3-1635-4892-88f5-af0021a5c0c3",
+  "displayName": "Laon-MGMT-Devops-SP",
+  "password": "kOA8Q~6jn0oyBBt~FPqb8i68Ld73kc.UW.vJubaA",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+EZ-Planet 프로덕션 Common AKS Service Principal
+{
+  "appId": "c276d24c-7474-430a-b2fa-57b530d823f9",
+  "displayName": "EZ-Planet-PaaS-Prod-Common-AKS-SP",
+  "password": "tUr8Q~kJMYDzRC5vpAbECaV4qNSHBvSsOlbRBaje",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+EZ-Planet 프로덕션 Inference AKS Service Principal
+{
+  "appId": "15a765ec-6aca-45c4-a5ff-cdf5350f7438",
+  "displayName": "EZ-Planet-PaaS-Prod-Inference-AKS-SP",
+  "password": "gAr8Q~S7Uobz0dzkiKCnYezkNwwjb6mjW5AxhakV",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+서비스 플랫폼 프로덕션 AKS Service Principal
+{
+  "appId": "112b1f6e-7fcb-40d2-8e19-3527b95854bb",
+  "displayName": "Laon-Service-Platform-Prod-AKS-SP",
+  "password": "J-Q8Q~FVmBKcAm5Tgp~lA19UDONDgcUM88-3nc6h",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+서비스 플랫폼 IT AKS Service Principal
+{
+  "appId": "204da5c8-3b25-433f-bcf7-f77abd4c6875",
+  "displayName": "Laon-Service-Platform-IT-AKS-SP",
+  "password": "A2s8Q~WQxDpGqgceNDMjAx9Zb36v4ukpYbLgvdhF",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+EZ-Planet 프로덕션 Common ExternalDns Service Principal
+{
+  "tenantId": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9",
+  "subscriptionId": "d8873738-1e0a-4688-9b53-5ce13f0073a9",
+  "resourceGroup": "EZ-Planet-PaaS-Shared-RG",
+  "aadClientId": "6a6c696b-228c-45b0-9781-073fd481eed5",
+  "aadClientSecret": "ryc8Q~CJBF6dv38DU2rWn6kzJIMfG9E1ED26ScY7"
+}
+
+EZ-Planet 프로덕션 Inference ExternalDns Service Principal
+{
+  "tenantId": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9",
+  "subscriptionId": "d8873738-1e0a-4688-9b53-5ce13f0073a9",
+  "resourceGroup": "EZ-Planet-PaaS-Shared-RG",
+  "aadClientId": "7399d180-52e4-44e4-875c-1b6babcbf6d2",
+  "aadClientSecret": "fw28Q~0_8ViQaCrWW59bvjhooOMDStgJmFtdLbXz"
+}
+
+서비스 플랫폼 프로덕션 ExternalDns Service Principal
+{
+  "tenantId": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9",
+  "subscriptionId": "d8873738-1e0a-4688-9b53-5ce13f0073a9",
+  "resourceGroup": "EZ-Planet-PaaS-Shared-RG",
+  "aadClientId": "b1f68825-55a3-4ad5-848c-ce7a1c712562",
+  "aadClientSecret": "0lq8Q~RsKE.Wk5TlpXcMNPAJMP1EbkPY~yNUAbdU"
+}
+
+서비스 플랫폼 IT ExternalDns Service Principal
+{
+  "tenantId": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9",
+  "subscriptionId": "d8873738-1e0a-4688-9b53-5ce13f0073a9",
+  "resourceGroup": "EZ-Planet-PaaS-Shared-RG",
+  "aadClientId": "96db008c-8588-41e1-a62b-4812eb96478e",
+  "aadClientSecret": "tEh8Q~9d5A6_tMAk3hA-M_GurgfJ63_3ezSLvaTY"
+}
+
+Shared-Prod-API-Registry-SP
+{
+  "appId": "86fb6fa8-ec56-436a-a46d-a65f44cba424",
+  "displayName": "Shared-Prod-API-Registry-SP",
+  "password": "-ub8Q~CGmyeJFNSIaXhe9x~J4pdoOC3gaxQYtcQb",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+---
+
+Billing-API-EZ-Planet-SP
+{
+  "appId": "00bc6433-4390-4e12-bc8f-62a918a95fd9",
+  "displayName": "Billing-API-EZ-Planet-SP",
+  "password": "COv8Q~7.Eshs_HRTe9e8x4v6B4ScqJ5x~ol37cxN",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}
+
+Billing-API-Service-Platform-SP
+{
+  "appId": "55bc4a86-ba1e-460c-a013-a56a0d432a1f",
+  "displayName": "Billing-API-Service-Platform-SP",
+  "password": "ey98Q~~SWowtEyizZv4WVo~2SR0ik9jfzlTLUdxf",
+  "tenant": "1bb0ee90-50e7-4302-a0f8-e96bb91a31e9"
+}

@@ -1,0 +1,38 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+##################################################################################
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_tag_environment: "Prod" # For Prod Resource Tags
+billing_api_tag: Prod-RT
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod Subnet Ids To Assign To Route Table
+prod_common_subnet: PaaS-Prod-Common-Subnet # For Prod Vnet IT Common Subnet name
+prod_inference_subnet: PaaS-Prod-Inference-Subnet # For Prod Vnet IT Inference Subnet name
+
+# For Prod Route Table
+prod_route_table: PaaS-Prod-RT
+
+# For Prod Route Entries
+prod_routes: # For Prod Routes
+- name: PaaS-Prod-Default-Route
+  address_prefix: "0.0.0.0/0"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+- name: On-Prem-Dev-Zone-Route
+  address_prefix: "10.100.0.0/22"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+- name: On-Prem-Local-Zone-Route
+  address_prefix: "10.10.100.0/23"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+  
