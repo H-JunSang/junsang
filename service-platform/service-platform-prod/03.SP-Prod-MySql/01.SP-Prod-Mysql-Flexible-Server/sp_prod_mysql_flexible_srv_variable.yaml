@@ -1,0 +1,47 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+##################################################################################
+# For SP-Prod-Common Resource Group and resource tags
+sp_prod_common_rg: Service-Platform-Prod-RG # For SP-Prod-Common Resource Group
+sp_prod_common_tag_creator: "Laonpeople" # For SP-Prod-Common Resource Tags
+sp_prod_common_tag_environment: "SP-Prod" # For SP-Prod-Common Resource Tags
+billing_tag: Service-Platform-Prod-MySql
+
+# For SP-Prod-Common virtual network variable
+sp_prod_common_vnet: "Service-Platform-Prod-vNET" # For SP-Prod-Common Vnet Name
+
+# For SP-Prod mysql Subnet Ids To Assign To Route Table
+sp_prod_mysql_subnet_name: Service-Platform-Prod-Mysql-Subnet # For SP-Prod Vnet Mysql Subnet name
+sp_prod_mysql_subnet_prefixs: ["10.124.64.16/28"] # For SP-Prod Vnet Mysql Subnet prefix
+
+# For SP-Prod Subnet Service Delegration
+delegration_name: mysql
+service_delegation_name: "Microsoft.DBforMySQL/flexibleServers"
+actions: ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+
+# For Prod Mysql Private DNS zone
+sp_prod_mysql_private_dns_zone: "service-platform-prod.private.mysql.database.azure.com"
+sp_prod_mysql_private_link_name: service-platform-prod-vNet-Link
+laonpeople_mgmt_virutal_link: laonpeople-mgmt-vnet-link
+
+# For Prod Mysql
+sp_prod_mysql_name: service-platform-prod-mysql-v8
+admin_username: spadmin
+admin_password: Laon0125!@#$
+backup_retention_days: 7
+geo_redundant_backup_enabled: false
+sku_name: "GP_Standard_D2ds_v4"
+mysql_version: "8.0.21"
+availability_zone: "2"
+storage_iops: "3200"
+storage_capacity: "500"
+
+# For Prod MySql Security Group
+sp_prod_mysql_nsg_name: Service-Platform-Prod-Mysql-NSG
+
+# Mgmt 네트워크 정보
+laonpeople_mgmt_virtual_network_id: /subscriptions/6c8c61e2-16fd-4d19-a8df-3f4cc501ee62/resourceGroups/Laonpeople-Mgmt-RG/providers/Microsoft.Network/virtualNetworks/Laonpeople-Mgmt-vNET

@@ -1,0 +1,22 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+# For SP-Prod-Common virtual network variable
+sp_prod_common_vnet: "Service-Platform-Prod-vNET" # For SP-Prod-Common Vnet Name
+
+##################################################################################
+# For SP-Prod-Common Resource Group and resource tags
+sp_prod_common_rg: Service-Platform-Prod-RG # For SP-Prod-Common Resource Group
+sp_prod_common_tag_creator: "Laonpeople" # For SP-Prod-Common Resource Tags
+sp_prod_common_tag_environment: "SP-Prod" # For SP-Prod-Common Resource Tags
+
+# For SP-Prod Subnet Ids To Assign To Network Security Groups
+sp_prod_common_storage_subnet: Service-Platform-Prod-Storage-Subnet # For SP-Prod Vnet 스토리지 Subnet name
+sp_prod_common_subnet: Service-Platform-Prod-Subnet # For SP-Prod Vnet Subnet name
+
+# For SP-Prod virtual network security groups
+sp_prod_common_security_group: Service-Platform-Prod-NSG # For SP-Prod NSG name
+sp_prod_common_storage_security_group: Service-Platform-Prod-Storage-NSG # For SP-Prod Storage NSG name

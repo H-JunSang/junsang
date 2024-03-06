@@ -1,0 +1,22 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: Laon # For Prefix Variable
+
+##################################################################################
+# For SP-Prod-Common Resource Group and resource tags
+sp_prod_common_rg: Service-Platform-Prod-RG # For SP-Prod-Common Resource Group
+sp_prod_common_tag_creator: "Laonpeople" # For SP-Prod-Common Resource Tags
+sp_prod_common_tag_environment: "SP-Prod" # For SP-Prod-Common Resource Tags
+billing_rg_tag: Service-Platform-Prod-RG
+billing_tag: Service-Platform-Prod-Networks
+
+# For SP-Prod-Common virtual network variable
+sp_prod_common_vnet: "Service-Platform-Prod-vNET" # For SP-Prod-Common Vnet Name
+sp_prod_common_address_space: "10.124.0.0/16" # For SP-Prod-Common Vnet CIDR
+sp_prod_common_subnets: # For SP-Prod-Common Vnet Subnets
+- name: Service-Platform-Prod-Subnet # For SP-Prod-Common Vnet k8s Subnet name
+  iprange: "10.124.0.0/18" # For SP-Prod-Common Vnet 쿠버네티스 Subnet prefix
+- name: Service-Platform-Prod-Storage-Subnet # For SP-Prod-Common Vnet 스토리지 Subnet name
+  iprange: "10.124.64.0/28" # For SSP-Prod-Common Vnet 스토리지 Subnet prefix

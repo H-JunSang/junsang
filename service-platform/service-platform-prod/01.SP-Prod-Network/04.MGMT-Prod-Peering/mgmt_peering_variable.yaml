@@ -1,0 +1,19 @@
+# For Region
+location: koreacentral # For Region
+
+# For SP-Prod Resource Group, location and resource tags
+mgmt_rg: Laonpeople-Mgmt-RG # For Shared Resource Group
+
+# For SP-Prod virtual network variable
+mgmt_vnet: Laonpeople-Mgmt-vNET # For Shared Vnet Name
+
+# For Mgmt virtual network To SP-Prod virtual network peering
+mgmt_to_sp_prod: Laonpeople-Mgmt-To-Service-Platform-Prod # For Mgmt-SP-Prod 피어링 name
+
+# For Mgmt virtual network peering Policy
+mgmt_allow_network_access: true # Access Prod network From remote networks
+mgmt_allow_forward_traffic: true # Allow Traffic From remote networks
+mgmt_allow_gateway_transit: true # Does not act as transit gateway
+mgmt_use_remote_gateway: false # use remote networks as transit gateway
+
+service_platform_prod_virtual_network_id: /subscriptions/0a1a7865-0f51-4274-8deb-687663497832/resourceGroups/Laon-Service-Platform-Prod-RG/providers/Microsoft.Network/virtualNetworks/Laon-Service-Platform-Prod-vNET
