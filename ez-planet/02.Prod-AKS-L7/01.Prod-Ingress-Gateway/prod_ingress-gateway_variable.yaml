@@ -1,0 +1,45 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# For Prod virtual network variable
+prod_common_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod Resource Group and resource tags
+prod_common_rg: PaaS-Prod-RG # For Prod Resource Group
+prod_common_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_common_tag_environment: "Prod" # For Prod Resource Tags
+billing_api_tag: Prod-AKS-ALB
+
+# For Prod Subnet Ids To Assign To Network Security Groups
+prod_common_ingress_subnet: PaaS-Prod-Ingress-Subnet # For Prod Vnet L7 로드밸런서 Subnet name
+
+# For Prod K8S L7 로드밸런서
+prod_common_k8s_l7_PIP: PaaS-Prod-Common-Ingress-Gateway-PIP-01 # L7 로드밸런서 퍼블릭 IP 이름
+prod_common_k8s_l7_gateway_name: PaaS-Prod-Common-Ingress-Gateway-01 # L7 로드밸런서 이름
+prod_common_k8s_l7_ip_name: prodgateway # L7 로드밸런서 사설 IP 이름
+
+# For K8S L7 로드밸런서 공통 변수
+frontend_port_name: "80" # 프론트 엔드 포트 
+sku_tier: "Standard_v2" # L7 로드밸런서 SKU
+min_capacity: "2" # 최소 로드밸런서 유닛 
+max_capacity: "4" # 최대 로드밸런서 유닛 
+backend_port: "80" # 백엔드 포트 
+request_timeout: "60" # 요청 타임아웃 
+routing_priority: "100" # 라우팅 우선 순위 
+backend_path: "/" # 백엔드 헬스 체크 경로 
+backend_protocol: "Http" # 백엔트 프로토콜
+allocate_public_ip: "Static" # L7 로드밸런서 Public IP 타입
+public_ip_sku: "Standard" # L7 로드밸런서 Public IP SKU
+backend_address_pool_name: default # 백엔드 풀 이름
+frontend_protocol: "Http" # 프론트 엔드 프로토콜
+frontend_ip_configuration_name: "appgwIPv4" # Public IP 이름
+http_setting_name: default # 백엔드 설정
+listener_name: default # 리슨너 
+request_routing_rule_name: default # 라우팅 룰
+enable_http2: true # HTTP2 
+cookie_affinity: "Disabled" # 쿠키 어피니티
+routing_rule: default # 라우팅 룰
+routing_rule_type: "Basic" # 라우팅 룰 타입
