@@ -1,0 +1,34 @@
+CI/CD Test
+--------------------------------
+# GitLab
+
+ID : junsang92
+PW : @
+
+Gitlab-Access-Token
+	glpat-viZAsFjFFVx1e_6gPjBN
+
+--------------------------------
+# jenkins
+
+ID : junsang
+PW : ghkdwnstkd
+
+https://jenkins-demo.datastackcloud.com/project/conference
+
+Secret Token
+	790bc29ee9ed9d90b466969ecc813d08
+
+
+--------------------------------
+# ArgoCD
+
+ID : admin
+PW : ghkdwnstkd
+
+--------------------------------
+# Docker Hub 
+
+Secret
+	dckr_pat_LGDuF91xqKgprCy0p4Psxhx-kY0
+

@@ -1,0 +1,12 @@
+
+# Jenkins Plugins List
+
+- kubernetes
+- copy artifact
+- Pipeline: GitHub
+- Jacoco
+- Github Custom Notification Context SCM Behaviour
+- Warnings Next Generation
+- Multibranch Pipeline Inline Definition
+- SonarQube Scanner (Optional)
+- Slack (Optional)
