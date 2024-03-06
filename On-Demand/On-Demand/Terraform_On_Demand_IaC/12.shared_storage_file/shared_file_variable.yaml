@@ -1,0 +1,38 @@
+# For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Storage Prefix Variable
+storage_prefix: ezcustom
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Shared" # For Shared Resource Tags
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+
+# For Shared Storage Subnet Ids To Assign To Storage
+shared_storage_subnet: PaaS_Shared_storage-subnet # For Shared Vnet 스토리지 Subnet name
+
+# For Storage Account as File System
+# 스토리지 어카운트 이름은 영소문자와 숫자 조합으로 이루어지며, 최소 3자리에서 최대 24자리수까자 가능하다. 특수문자 불가하다. 프리픽스 사용할 경우 참조
+shared_file_storage: "sharedfilepv05" # 파일 스토리지 이름
+shared_file_storage_sku: "Premium" # 스토리지 SKU
+shared_file_storage_type: "LRS" # 스토리지 복제 타입
+shared_file_public_network_access_enabled: "true" # 외부에서 접근 여부
+shared_file_large_file_enabled: "true" # large 파일 사용 여부
+shared_file_default_action: "Deny" # 기본 허용 정책
+shared_file_storage_kind: "FileStorage" # 스토리지 종류
+shared_file_storage_endpoint: "PaaS-Shared-Storage-01-Endpoint" # 스토리지 프라이빗 엔드 포인트
+shared_file_storage_private_service_connection: "PaaS-Shared-Storage-01-Connection" # 스토리지 프라이빗 연결
+shared_file_storage_dns_zone_group: "PaaS-Shared-Storage-01-Private-Dns" # 스토리지 DNS 존 그룹
+shared_file_storage_dns_zone_name: "privatelink.file.core.windows.net" # 스토리지 DNS 존 이름
+shared_vnet_virtual_link_name: "PaaS-Shared-vNet-link" # 스토리지 DNS 연결 네트워크 가상 링크 이름
+shared_file_storage_allowed_ips: [ "125.132.250.96/29", "125.132.211.0/28", "59.9.155.128/27", "58.151.57.2", "220.74.34.204"] # 데렉토리 접근 및 확인 혀용
+shared_file_storage_bypass: [ "AzureServices", "Metrics", "Logging" ] # 예외처리
+shared_file_storage_subresource_names: [ "file" ] # 서브 리소스 이름
+shared_file_dns_is_manual_connection: false # DNS 수동 연결 여부

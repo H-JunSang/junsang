@@ -1,0 +1,31 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Shared" # For Shared Resource Tags
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+
+# For Shared Subnet Ids To Assign To Network Security Groups
+shared_k8s_subnet: PaaS-Shared-K8S-Subnet # For Shared Vnet k8s Subnet name
+shared_storage_subnet: PaaS_Shared_storage-subnet # For Shared Vnet 스토리지 Subnet name
+shared_ingress_subnet: PaaS_Shared_ingress-subnet # For Shared Vnet k8s ALB Subnet name
+shared_apim_subnet: PaaS-Shared-Apim-Subnet # For Shared Vnet API Management Subnet Name
+shared_apim_alb_subnet: PaaS-Shared-Apim-Alb-Subnet # For Shared Vnet API ALB Subnet Name
+prod_apim_subnet: PaaS-Prod-Apim-Subnet # For Shared Vnet API Management Subnet Name
+prod_apim_alb_subnet: PaaS-Prod-Apim-Alb-Subnet # For Shared Vnet API ALB Subnet Name
+
+# For Shared virtual network security groups
+shared_k8s_security_group: PaaS-Shared-K8S-NSG # For Shared k8s NSG name
+shared_storage_security_group: PaaS-Shared-Storage-NSG # For Shared 스토리지 NSG name
+shared_ingress_security_group: PaaS-Shared-Ingress-NSG # For Shared ALB NSG name
+shared_apim_security_group: PaaS-Shared-Apim-NSG # For Shared API Management NSG name
+shared_apim_alb_security_group: PaaS-Shared-Apim-Alb-NSG # For Shared API ALB NSG name
+prod_apim_security_group: PaaS-Prod-Apim-NSG # For Prod API Management NSG name
+prod_apim_alb_security_group: PaaS-Prod-Apim-Alb-NSG # For Prod API ALB NSG name

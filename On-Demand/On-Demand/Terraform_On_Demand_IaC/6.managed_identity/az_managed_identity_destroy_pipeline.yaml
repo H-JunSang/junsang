@@ -1,0 +1,58 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+parameters:
+    # Resource Group
+  - name: rgname
+    type: string
+    default: tfstate-rg # tf 상태 파일 저장하기 위한 스토리지 어카운트 리소스 그룹
+    # 스토리지 어카운트 이름
+  - name: stgaccount
+    type: string
+    default: 'ezcustomertfstate01' # tf 상태 파일 저장하기 위한 스토리지 어카운트 이름
+    # 컨테이너 이름
+  - name: container
+    type: string
+    default: 'terraform-states' # tf 상태 파일 저장하기 위한 blob 컨테이너
+    # tfstate 파일 이름
+  - name: key
+    type: string
+    default: 'managed_identity.tfstate' # tf 상태 파일 이름
+stages:
+  - stage: Plan
+    displayName: Plan
+    jobs:
+      - job:
+            
+  - stage: destroy
+    displayName: terraform destroy
+    jobs:
+      - job: 
+        steps:
+        
+        - task: TerraformTaskV4@4
+          displayName: terraform init
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/6.managed_identity' # 테라폼 및 변수 파일 경로
+            backendServiceArm: 'MPN Subscription'
+            backendAzureRmResourceGroupName: ${{parameters.rgname}}
+            backendAzureRmStorageAccountName: ${{parameters.stgaccount}}
+            backendAzureRmContainerName: ${{parameters.container}}
+            backendAzureRmKey: ${{parameters.key}}
+
+        - task: TerraformTaskV4@4
+          displayName: terraform destroy
+          inputs:
+            provider: 'azurerm'
+            command: 'destroy'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/6.managed_identity' # 테라폼 및 변수 파일 경로
+            environmentServiceNameAzureRM: 'MPN Subscription'

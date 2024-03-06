@@ -1,0 +1,56 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Shared" # For Shared Resource Tags
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+
+# For Shared Subnet Ids To Assign To Network Security Groups
+shared_k8s_subnet: PaaS-Shared-K8S-Subnet # For Shared Vnet k8s Subnet name
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Shared User Managed Identity
+shared_user_managed_identity: PaaS-Shared-KeyVault-MID # identity 리소스 이름
+user_identity_type: "UserAssigned"
+
+### For Key Vault
+keyvault_name: RSAKEY97 # Key vault 리소스 이름
+key_name: PaaS-Shared-RSAKEYv5-4096 # 키 이름
+
+# For Azure 컨테이너 레지스트리
+# 영문과 숫자만 가능하며 특수문자 불가하다. 
+# 영문과 숫자를 포함하여 최대 50자리까자 가능하다.
+# 프리픽스 지정할 경우 특수 문자 불가
+container_registry: EZCustomer01PaaSACR # 컨테이너 레지스트리 이름
+container_sku: "Premium" # 컨테이너 레지스트리 SKU
+container_admin_enabled: true # 컨테이너 레지스트리 관리자 계정 활성화
+container_rule_bypass: "AzureServices" # 방화벽 바이패스 Azure 서비스 
+container_public_access: true # 퍼블릭 접근 허용
+container_default_action: "Deny" # 기본 허용 정책
+container_action: "Allow" # 허용 정책
+container_allowed_subnet_ids: [] # 서브넷 허용 정책(null)
+container_allowed_ips: [ "125.132.250.96/29", "125.132.211.0/28", "59.9.155.128/27", "58.151.57.2/32", "220.74.34.204/32"] # 레포지토리 접근 및 확인 혀용
+container_encryption_enabled: true # 컨테이너 이미지 암호화
+
+# For 컨테이너 레지스트리 Private Endpoint
+container_private_dns_zone: "privatelink.azurecr.io" # 컨테이너 레지스트리 Private Dns 존 이름
+shared_container_private_link: PaaS-Shared-Registry-link # Shared 프라이빗 링크 이름
+common_container_private_link: PaaS-Common-Registry-link # Common 프라이빗 링크 이름
+prod_container_private_link: PaaS-Prod-Registry-link # Prod 프라이빗 링크 이름
+container_private_endpoint: PaaS-Shared-Container-Endpoint # 컨테이너 레지스트리 프라이빗 엔드 포인트 이름
+container_service_connection: PaaS-Shared-Container-Connection # 컨테이너 레지스트리 프라이빗 서비스 연결
+container_subresource: ["registry"] # 컨테이너 레지스트리 서브 리소스
+container_private_dns_zone_group: PaaS-Shared-Container-Dns-Group # 컨테이너 레지스트리 프라이빗 DNS 존 그룹
+is_manual_connection: false # 수동 연결

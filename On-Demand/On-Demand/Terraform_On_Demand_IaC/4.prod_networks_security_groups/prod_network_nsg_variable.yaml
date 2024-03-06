@@ -1,0 +1,25 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_tag_environment: "Prod" # For Prod Resource Tags
+
+# For Prod Subnet Ids To Assign To Network Security Groups
+prod_storage_subnet: PaaS-Prod-Storage-Subnet # For Prod Vnet 스토리지 Subnet name
+prod_ingress_subnet: PaaS-Prod-Ingress-Subnet # For Prod Vnet L7 로드밸런서 Subnet name
+prod_it_common_subnet: PaaS-Prod-IT-Common-Subnet # For Prod Vnet IT Common Subnet name
+prod_it_inference_subnet: PaaS-Prod-IT-Inference-Subnet # For Prod Vnet IT Inference Subnet name
+
+# For Prod virtual network security groups
+prod_storage_security_group: PaaS-Prod-Storage-NSG # For Prod 스토리지 NSG name
+prod_ingress_security_group: PaaS-Prod-Ingress-NSG # For Prod ALB NSG name
+prod_it_common_security_group: PaaS-Prod-IT-Common-NSG # For Prod IT Common NSG name
+prod_it_inference_security_group: PaaS-Prod-IT-Inference-NSG # For Prod IT Inference NSG name

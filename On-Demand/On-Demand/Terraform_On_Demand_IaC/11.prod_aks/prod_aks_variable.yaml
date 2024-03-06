@@ -1,0 +1,142 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_common_tag_environment: "Prod-IT-Common" # For Prod IT Common Tags
+prod_inference_tag_environment: "Prod-IT-Inference" # For Prod IT Inference Tags
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod k8s Subnets Ids To Assign To 쿠버네티스
+prod_it_common_subnet: PaaS-Prod-IT-Common-Subnet # For Prod Vnet IT Common Subnet name
+prod_it_inference_subnet: PaaS-Prod-IT-Inference-Subnet # For Prod Vnet IT Inference Subnet name
+
+# For Prod K8S L7 로드밸런서
+prod_k8s_l7_gateway_name: PaaS-Prod-IT-Common-Ingress-Gateway-01 # L7 로드밸런서 이름
+
+# 쿠버네티스 Service Principal(쿠버네티스 클러스터 배포 전 Azure CLI 사용하여 생성)
+service_appid: "" # Service Principal 앱 ID
+service_secret: "" # Service Principal 시크릿
+
+# Azure 쿠버네티스 공통 변수
+network_plugin: "azure" # 네트워크 플러그인
+network_policy: "calico" # 네트워크 정책
+loadbalancer_sku: "standard" # 로드밸런서 SKU
+private_cluster: "true" # 프라이빗 클러스터
+k8s_sku_tier: "Standard" # 쿠버네티스 SKU
+k8s_version: "1.27.7" # 쿠버네티스 버전
+auto_scale_false: "false" # 오토스케일링 여부
+auto_scale_true: "true" # 오토스케일링 여부
+disk_driver_enabled: "true" # CSI 드라이버 Enable
+file_driver_enabled: "true" # 파일 드라이버 Enable
+publisher: "Microsoft" # 퍼블리셔(마이크로소프트 제공)
+product: "OMSGallery/ContainerInsights" # 프로덕트(컨테이너 인사이트)
+azure_policy_enabled: "true" # Azure 정책 
+secret_rotation_enabled: "true" # 시크릿 로테이션 
+secret_rotation_interval: "10080m" # 시크릿 로테이션 인터벌(7일 설정)
+
+# For Common 쿠버네티스
+prod_it_common_node_resorce_group: "PaaS-IT-Common-VMSS-RG" # 쿠버네티스 노드 풀 리소스 그룹
+prod_it_common_k8s_name: "PaaS-Prod-IT-Common-AKS-01" # Common 쿠버네티스 클러스터 이름
+prod_it_common_k8s_dns_prefix: "prod-it-commonk8s" # Common 쿠버네티스 DNS 프리픽스
+prod_it_common_k8s_service_cidr: "10.11.0.0/16" # Common 쿠버네티스 서비스 CIDR
+prod_it_common_k8s_dns_service_ip: "10.11.0.10" # Common 쿠버네티스 DNS 주소
+prod_it_common_agent_pool: "agentpool" # Common 쿠버네티스 에이전트 풀 이름
+prod_it_common_agent_pool_count: "1" # Common 쿠버네티스 에이전트 풀 노드 대수
+prod_it_common_agent_pool_vm_size: "Standard_D2s_v5" # Common 쿠버네티스 에이전트 풀 가상 머신 스펙
+prod_it_common_node_min_count: "1" # Common 쿠버네티스 사용자 노드 풀 최소 노드 대수
+prod_it_common_node_max_count: "3" # Common 쿠버네티스 사용자 노드 풀 최대 노드 대수
+prod_it_common_node_max_pods_count: "50" # Common 쿠버네티스 사용자 노드 최대 파드 대수
+prod_it_common_node_pool_mode: "User" # Common 쿠버네티스 사용자 노드 풀 모드
+prod_it_common_agent_node_label_prefix: "Environment" # Common 쿠버네티스 에이전트 풀 노드 프리픽스
+prod_it_common_agent_node_label: "prod-it-common-agent" # Common 쿠버네티스 에이전트 풀 노드 레이블
+prod_it_common_itmsb_node_count: "1" # Common Itmsb 풀 노드 대수
+prod_it_common_itmsb_node_pool: "paitmsb" # Common 쿠버네티스 사용자 노드 풀 이름
+prod_it_common_itmsb_node_vm_size: "Standard_D2ds_v5" # Common 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod_it_common_itmsb_node_pool_label_prefix_1: "Domain" # itmsb 노드 풀 레이블 프리픽스
+prod_it_common_itmsb_node_pool_label_prefix_2: "Role" # itmsb 노드 풀 레이블 프리픽스
+prod_it_common_itmsb_node_pool_label_prefix_3: "Service" # itmsb 노드 풀 레이블 프리픽스
+prod_it_common_itmsb_node_pool_label_1: "Shared" # itmsb 노드 풀 레이블
+prod_it_common_itmsb_node_pool_label_2: "Kafka" # itmsb 노드 풀 레이블
+prod_it_common_itmsb_node_pool_label_3: "MessageBus" # itmsb 노드 풀 레이블
+prod_it_common_paitshared_node_pool: "paitshared" # Common 쿠버네티스 사용자 노드 풀 이름
+prod_it_common_paitshared_node_vm_size: "Standard_D8ds_v5" # Common 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod_it_common_paitshared_node_pool_label_prefix_1: "Domain" # paitshared 노드 풀 레이블 프리픽스
+prod_it_common_paitshared_node_pool_label: "Shared" # paitshared 노드 풀 레이블
+prod_it_common_diag_name: "Prod-IT-Common-K8s-diagnose" # 진단 이름
+prod_it_common_k8s_log: # 쿠버네티스 로깅
+- name: "cloud-controller-manager" # 컨트롤러 Manager
+- name: "cluster-autoscaler" # 클러스터 오토스케이러
+- name: "csi-azuredisk-controller" # csi disk 컨트롤러
+- name: "csi-azurefile-controller" # csi 파일 컨트롤러
+- name: "csi-snapshot-controller" # csi 스냅샷 컨트롤러
+- name: "kube-apiserver" # 쿠버네티스 API 서버
+- name: "kube-controller-manager" # 쿠버네티스 컨트롤러 Manager
+- name: "kube-scheduler" # 쿠버네티스 스케쥴러
+prod_it_common_k8s_metric: # 쿠버네티스 메트릭
+- name: "AllMetrics" # 모든 메트릭
+prod_it_common_k8s_metric_enabled: true # 메트릭 활성화
+
+# For Inference 쿠버네티스
+prod_it_inference_node_resorce_group: "PaaS-IT-Inference-VMSS-RG" # 쿠버네티스 노드 풀 리소스 그룹
+prod_it_inference_k8s_name: "PaaS-Prod-IT-Inference-AKS-01" # Inference 쿠버네티스 클러스터 이름
+prod-it-inference_k8s_dns_prefix: "prod-it-inferencek8s" # Inference 쿠버네티스 DNS 프리픽스
+prod-it-inference_k8s_service_cidr: "10.12.0.0/16" # Inference 쿠버네티스 서비스 CIDR
+prod-it-inference_k8s_dns_service_ip: "10.12.0.10" # Inference 쿠버네티스 DNS 주소
+prod-it-inference_agent_pool: "agentpool" # Inference 쿠버네티스 에이전트 풀 이름
+prod-it-inference_agent_pool_count: "1" # Inference 쿠버네티스 에이전트 풀 노드 대수
+prod-it-inference_agent_pool_vm_size: "Standard_D2s_v5" # Inference 쿠버네티스 에이전트 풀 가상 머신 스펙
+prod-it-inference_node_min_count: "1" # Inference 쿠버네티스 사용자 노드 풀 최소 노드 대수
+prod-it-inference_node_max_count: "3" # Inference 쿠버네티스 사용자 노드 풀 최대 노드 대수
+prod-it-inference_node_max_pods_count: "50" # Inference 쿠버네티스 사용자 노드 최대 파드 대수
+prod-it-inference_node_pool_mode: "User" # Inference 쿠버네티스 사용자 노드 풀 모드
+prod-it-inference_agent_node_label_prefix: "Environment" # Inference 쿠버네티스 에이전트 풀 노드 프리픽스
+prod-it-inference_agent_node_label: "prod-it-inference-agent" # Inference 쿠버네티스 에이전트 풀 노드 레이블
+prod-it-inference_itinfshrd_node_pool: "itinfshrd" # Inference 쿠버네티스 사용자 노드 풀 이름
+prod-it-inference_itinfshrd_node_vm_size: "Standard_D2ds_v5" # Inference 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod-it-inference_itinfshrd_node_pool_label_prefix_1: "Domain" # itinfshrd 노드 풀 레이블 프리픽스
+prod-it-inference_itinfshrd_node_pool_label_prefix_2: "Environment" # itinfshrd 노드 풀 레이블 프리픽스
+prod-it-inference_itinfshrd_node_pool_label_1: "Shared" # itinfshrd 노드 풀 레이블
+prod-it-inference_itinfshrd_node_pool_label_2: "IT" # itinfshrd 노드 풀 레이블
+prod-it-inference_paitinf_node_count: "0" # Inference paitinf 풀 노드 대수
+prod-it-inference_paitinf_node_pool: "paitinf" # Inference 쿠버네티스 사용자 노드 풀 이름
+prod-it-inference_paitinf_node_vm_size: "Standard_NC8as_T4_v3" # Inference 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod-it-inference_paitinf_node_pool_taints: ["sku=gpu:NoSchedule"] # paitinf 노드 테인트
+prod-it-inference_alert_action_group: "Prod-IT-Inference-K8s-Alert-Group" # 알람 액션 그룹
+prod-it-inference_cpu_alert_short_name: "CpuAlert" # CPU 알람 Short 이름
+prod-it-inference_alert_email_admin: "Prod-IT-Inference-k8sadmin" # 알람 메일 관리자
+prod-it-inference_alert_email_address: "kwlee@tdgl.co.kr" # 알람 메일 주소
+prod-it-inference_cpu_alert_name: "Prod-IT-Inference-K8s-Cpu-Alert" # CPU 알람 이름
+prod-it-inference_cpu_metric_namespace: "Microsoft.ContainerService/managedClusters" # CPU 메트릭 이름 스페이스
+prod-it-inference_cpu_metric_name: "node_cpu_usage_percentage" # CPU 메트릭 이름
+prod-it-inference_cpu_aggregate: "Average" # CPU 사용 합계
+prod-it-inference_cpu_operator: "GreaterThan" # CPU 오퍼레이터
+prod-it-inference_cpu_threshold: "80" # CPU 쓰레드홀드
+prod-it-inference_mem_alert_name: "Prod-IT-Inference-K8s-Mem-Alert" # 메모리 알람 이름
+prod-it-inference_mem_metric_namespace: "Microsoft.ContainerService/managedClusters" # 메모리 메트릭 이름 스페이스
+prod-it-inference_mem_metric_name: "node_memory_working_set_percentage" # 메모리 메트릭 이름
+prod-it-inference_mem_aggregate: "Average" # 메모리 사용 합계
+prod-it-inference_mem_operator: "GreaterThan" # 메모리 오퍼레이터
+prod-it-inference_mem_threshold: "80" # 메모리 쓰레드홀드
+prod-it-inference_log_workspace_name: "PaaS-Prod-IT-Inference-K8s-log-workspace" # 로그 WorkSpace 이름
+prod-it-inference_log_workspace_name_sku: "PerGB2018" # 로그 Workspace SKU
+prod-it-inference_log_solution_name: "ContainerInsights" # 로드 솔루션 이름
+prod-it-inference_diag_name: "Prod-IT-Inference-K8s-diagnose" # 진단 이름
+prod-it-inference_k8s_log: # 쿠버네티스 로깅
+- name: "cloud-controller-manager" # 컨트롤러 Manager
+- name: "cluster-autoscaler" # 클러스터 오토스케이러
+- name: "csi-azuredisk-controller" # csi disk 컨트롤러
+- name: "csi-azurefile-controller" # csi 파일 컨트롤러
+- name: "csi-snapshot-controller" # csi 스냅샷 컨트롤러
+- name: "kube-apiserver" # 쿠버네티스 API 서버
+- name: "kube-controller-manager" # 쿠버네티스 컨트롤러 Manager
+- name: "kube-scheduler" # 쿠버네티스 스케쥴러
+prod-it-inference_k8s_metric: # 쿠버네티스 메트릭
+- name: "AllMetrics" # 모든 메트릭
+prod-it-inference_k8s_metric_enabled: true # 메트릭 활성화

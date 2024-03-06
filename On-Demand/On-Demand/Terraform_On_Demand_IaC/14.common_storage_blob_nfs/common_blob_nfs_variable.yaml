@@ -1,0 +1,40 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Storage Prefix Variable
+storage_prefix: ezcustom
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_common_tag_environment: "Prod-IT-Common" # For Prod IT Common Tags
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod k8s Subnets Ids To Assign To 쿠버네티스
+prod_it_common_storage_subnet: PaaS-Prod-Storage-Subnet # For Prod Vnet IT Common Subnet name
+
+# For Storage Account as Blob Nfs
+# 스토리지 어카운트 이름은 영소문자와 숫자 조합으로 이루어지며, 최소 3자리에서 최대 24자리수까지 가능하다. 특수문자 불가하다. 프리픽스 사용할 경우 참조
+prod_it_common_blob_storage: "itcommonblob01" # blob 스토리지 이름
+prod_it_common_blob_storage_account_sku: "Premium" # 스토리지 SKU
+prod_it_common_blob_account_kind: "BlockBlobStorage" # 스토리지 종류
+prod_it_common_blob_storage_replication_type: "LRS" # 스토리지 복제 타입
+prod_it_common_blob_public_network_access_enabled: "true" # 외부에서 접근 여부
+prod_it_common_blob_default_action: "Deny" # 기본 허용 정책
+prod_it_common_blob_container_access_type: "blob" # 컨테이너 접근 유형
+prod_it_common_blob_hierarchical_namespace_enabled: "true" # 계층 네임 스페이스 여부
+prod_it_common_storage_nfsv3_enabled: "true" # nfs 프로토콜 사용 여부
+prod_it_common_blob_endpoint_name: "PaaS-Prod-IT-Common-blob-Nfs-Endpoint" # 스토리지 프라이빗 엔드 포인트
+prod_it_common_blob_private_service_connection: "PaaS-Common-blob-Nfs-Connection" # 스토리지 프라이빗 연결
+prod_it_common_blob_dns_zone_group: "PaaS-Prod-IT-Common-blob-Nfs-Private-Dns" # 스토리지 DNS 존 그룹
+prod_it_common_blob_dns_zone_name: "privatelink.blob.core.windows.net" # 스토리지 DNS 존 이름
+prod_it_common_vnet_virtual_link_name: "PaaS-Prod-vNet-link" # 스토리지 DNS 연결 네트워크 가상 링크 이름
+prod_it_common_blob_allowed_ips: [ "125.132.250.96/29", "125.132.211.0/28", "59.9.155.128/27", "58.151.57.2", "220.74.34.204"] # 데렉토리 접근 및 확인 혀용
+prod_it_common_blob_storage_bypass: [ "AzureServices", "Metrics", "Logging" ] # 예외처리
+prod_it_common_blob_storage_subresource_names: [ "blob" ] # 서브 리소스 이름
+prod_it_common_blob_dns_is_manual_connection: false # DNS 수동 연결 여부

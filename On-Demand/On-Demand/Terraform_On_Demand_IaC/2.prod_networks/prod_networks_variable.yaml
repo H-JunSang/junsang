@@ -1,0 +1,24 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+##################################################################################
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_tag_environment: "Prod" # For Prod Resource Tags
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+prod_address_space: "10.121.0.0/16" # For Prod Vnet CIDR
+prod_subnets: # For Prod Vnet Subnets
+- name: PaaS-Prod-IT-Common-Subnet # For Prod Vnet IT Common k8s Subnet name
+  iprange: "10.121.0.0/18" # For Prod Vnet IT Common 쿠버네티스 Subnet prefix
+- name: PaaS-Prod-IT-Inference-Subnet # For Prod Vnet IT Inference k8s Subnet name
+  iprange: "10.121.64.0/18" # For Prod Vnet IT Inference 쿠버네티스 Subnet prefix
+- name: PaaS-Prod-Storage-Subnet # For Prod Vnet 스토리지 Subnet name
+  iprange: "10.121.128.0/28" # For Prod Vnet 스토리지 Subnet prefix
+- name: PaaS-Prod-Ingress-Subnet # For Prod Vnet k8s ALB Subnet name
+  iprange: "10.121.128.16/28" # For Prod Vnet k8s ALB Subnet prefix

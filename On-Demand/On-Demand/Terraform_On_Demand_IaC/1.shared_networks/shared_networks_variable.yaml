@@ -1,0 +1,30 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable (프리픽스 공통 변수)
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Shared" # For Shared Resource Tags
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+shared_address_space: "10.120.0.0/16" # For Shared Vnet CIDR
+shared_subnets: # For Shared Vnet Subnets
+- name: PaaS-Shared-K8S-Subnet # For Shared Vnet k8s Subnet name
+  iprange: "10.120.0.0/18" # For Shared Vnet 쿠버네티스 Subnet prefix
+- name: PaaS_Shared_storage-subnet # For Shared Vnet 스토리지 Subnet name
+  iprange: "10.120.64.0/28" # For Shared Vnet 스토리지 Subnet prefix
+- name: PaaS_Shared_ingress-subnet # For Shared Vnet k8s ALB Subnet name
+  iprange: "10.120.64.16/28" # For Shared Vnet k8s ALB Subnet prefix
+- name: PaaS-Shared-Apim-Subnet # For Shared Vnet API Management Subnet Name
+  iprange: "10.120.64.32/28" # For Shared Vnet API Management Subnet prefix
+- name: PaaS-Shared-Apim-Alb-Subnet # For Shared Vnet API ALB Subnet Name
+  iprange: "10.120.64.48/28" # For Shared Vnet API ALB Subnet prefix
+- name: PaaS-Prod-Apim-Subnet # For Prod Vnet API Management Subnet Name
+  iprange: "10.120.64.64/28" # For Prod Vnet API Management Subnet prefix
+- name: PaaS-Prod-Apim-Alb-Subnet # For Prod Vnet API ALB Subnet Name
+  iprange: "10.120.64.80/28" # For Prod Vnet API ALB Subnet prefix
+

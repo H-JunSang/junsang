@@ -1,0 +1,36 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+
+# For Shared virtual network To Common and Prod virtual network peering
+paas_shared_to_paas_prod: PaaS-Shared-To-PaaS-Prod # For Shared-Prod 피어링 name
+
+# For Shared virtual network peering Policy
+allow_network_access: true # Access Shared network From remote networks
+allow_forward_traffic: true # Allow Traffic From remote networks
+allow_gateway_transit: false # Does not act as transit gateway
+use_remote_gateway: false # Does not use remote networks as transit gateway
+
+##################################################################################
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod virtual network To Shared and Common virtual network peering
+paas_prod_to_paas_shared: PaaS-Prod-To-PaaS-Shared # For Prod-Shared 피어링 이름
+
+# For Prod virtual network peering Policy
+allow_network_access: true # Access Prod network From remote networks
+allow_forward_traffic: true # Allow Traffic From remote networks
+allow_gateway_transit: false # Does not act as transit gateway
+use_remote_gateway: false # Does not use remote networks as transit gateway

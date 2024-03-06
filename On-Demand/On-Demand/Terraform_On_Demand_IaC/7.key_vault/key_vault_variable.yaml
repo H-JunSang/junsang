@@ -1,0 +1,70 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Customer-01 # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Shared" # For Shared Resource Tags
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNet" # For Shared Vnet Name
+
+# For Shared Apim L7 로드밸런서 Subnet Ids To Assign To Key Vault Private Endpoint
+shared_apim_alb_subnet: PaaS-Shared-Apim-Alb-Subnet # For Shared Vnet API ALB Subnet Name
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Shared User Managed Identity
+shared_user_managed_identity: PaaS-Shared-KeyVault-MID # identity 리소스 이름
+
+### For Key Vault
+keyvault_name: RSAKEY97 # Key vault 리소스 이름(키볼트의 경우, 퍼블릭 공간에 배포되므로 이름은 고유해야 하며 영문, 숫자, 특수문자 - 와 조합하여 최소 3자리에서 최대 24자리수까지 지정 가능하며 프리픽스 지정할 경우 24자리 넘어가지 않도록 주의)
+sku_name: "standard" # Sku 타입
+for_enabled_deployment: true # deployment 가능
+for_enabled_disk_encryption: true # 디스크 암호화 가능
+for_enabled_template_deployment: true # 템플릿 디플로이 가능
+enable_public_network_access: true # 퍼블릭 네트워크에서 접근 가능
+enable_purge_prodection: true # 완전 삭제 보호
+firewall_bypass: "AzureServices" # Key Vault 방화벽 바이패스
+default_action: Deny # 기본 허용 정책
+soft_delete_retention_days: "7" # 삭제 후 7일간 보관
+key_name: PaaS-Shared-RSAKEYv5-4096 # 키 이름
+key_type: "RSA" # 키 타입
+key_size: "4096" # 키 길이
+key_rotation_policy: "P30D" # 키 로테이션 정책
+key_expire_after: "P90D" # 키 만료
+notify_expiry: "P29D" # 키 만료 알람
+###
+# Azure Devops 파이프라인에서 배포 시, 0.0.0.0/0 키볼트 방화벽에서 허용해주어야 RSA 키를 생성할 수 있다. 그러지 않을 경우 배포 시 키 생성 부분에서 에러가 발생한다.
+# 키볼트 키 생성 시, 키 생성하는 주체가 데브옵스이므로 방화벽에서 차단되면 키 생성 부분에서 차단 에러가 발생되고 Job 실패한다. 데브옵스 공인 IP 만 허용해주면 되는 데 해당 주소는 실 시간으로 변경된다.
+# 그러므로 배포 시에는 "0.0.0.0/0"으로 허용하여 Job이 실패 안하도록 하고, 배포 후에는 보안 차원에서 "0.0.0.0/0" 허용 정책을 삭제할 수 도 있다.
+# 그러나 "0.0.0.0/0" 정책은 데브옵스에서 테라폼 코드로 정의할 수 있지만, 포탈에서 정의 불가
+allowed_ips: ["0.0.0.0/0", "125.132.250.96/29", "125.132.211.0/28", "59.9.155.128/27", "58.151.57.2/32", "220.74.34.204/32"] # 포탈 키 확인용 허용 정책
+###
+key_permissions: ["Get","List","Update","Create","Import","Delete","Recover","Backup","Restore","Decrypt","Encrypt",
+"UnwrapKey","WrapKey","Verify","Sign","Purge","Release","Rotate","GetRotationPolicy","SetRotationPolicy"] # 키 Permissions
+###
+secret_permissions: ["Get","List","Set","Delete","Recover","Backup","Restore","Purge"] # 시크릿 Permissions
+###
+certificate_permissions: ["Get","List","Update","Create","Import","Delete","Recover",
+"Backup","Restore","ManageContacts","ManageIssuers","GetIssuers","ListIssuers",
+"SetIssuers","DeleteIssuers","Purge"] # 인증서 Permissions
+###
+key_opts: ["decrypt", "encrypt", "sign", "unwrapKey", "verify", "wrapKey"] # 키 operations Permissions
+
+# For Key Vault Private Endpoint
+key_vault_private_dns_zone: "privatelink.vaultcore.azure.net" # 키 볼트 Private Dns 존 이름
+shared_key_vault_private_link: PaaS-Shared-KeyVault-link # Shared 키 볼트 Private 링크 이름
+prod_key_vault_private_link: PaaS-Prod-KeyVault-link # Prod 키 볼트 Private 링크 이름
+key_vault_private_endpoint: PaaS-Shared-KeyVault-Endpoint # 키 볼트 Private 엔드 포인트 이름
+key_vault_service_connection: PaaS-Shared-KeyVault-Connection # 키 볼트 서비스 연결 이름
+key_vault_private_dns_zone_group: PaaS-Shared-KeyVault-Dns-Group # 키 볼트 Dns 존 그룹 이름
+key_vault_subresource: ["Vault"] # 키 볼트 서브 리소스 이름
+is_manual_connection: false # 수동 연결
