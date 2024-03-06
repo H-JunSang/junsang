@@ -1,0 +1,130 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# For Prod Resource Group and resource tags
+prodrg: PaaS-Prod-RG # For Prod Resource Group
+sharedrg: PaaS-Shared-RG # For Shared Resource Group
+itrg: PaaS-IT-RG # For IT Resource Group
+sp_prod_common_rg: Service-Platform-Prod-RG # For SP-Prod-Common Resource Group
+sp_it_common_rg: Service-Platform-IT-RG # For SP-IT-Common Resource Group
+prod_tag_creator: "Laonpeople" # For Prod Resource Tags
+prod_inference_tag_environment: "Prod-Inference" # For Prod IT Inference Tags
+billing_tag: Prod-Inference-AKS
+billing_workspace: Prod-Inference-logspace
+billing_insight: Prod-Inference-Solution
+
+# For Prod virtual network variable
+prod_vnet: "PaaS-Prod-vNET" # For Prod Vnet Name
+
+# For Prod Subnet Ids To Assign To Network Security Groups
+prod_inference_subnet: PaaS-Prod-Inference-Subnet # For Prod Vnet IT Inference Subnet name
+
+# 쿠버네티스 Service Principal(쿠버네티스 클러스터 배포 전 Azure CLI 사용하여 생성)
+service_appid: "15a765ec-6aca-45c4-a5ff-cdf5350f7438" # Service Principal 앱 ID
+service_secret: "gAr8Q~S7Uobz0dzkiKCnYezkNwwjb6mjW5AxhakV" # Service Principal 시크릿
+
+# Azure 쿠버네티스 공통 변수
+network_plugin: "azure" # 네트워크 플러그인
+network_policy: "calico" # 네트워크 정책
+loadbalancer_sku: "standard" # 로드밸런서 SKU
+private_cluster: "true" # 프라이빗 클러스터
+k8s_sku_tier: "Standard" # 쿠버네티스 SKU
+k8s_version: "1.27.7" # 쿠버네티스 버전
+auto_scale_false: "false" # 오토스케일링 여부
+auto_scale_true: "true" # 오토스케일링 여부
+disk_driver_enabled: "true" # CSI 드라이버 Enable
+file_driver_enabled: "true" # 파일 드라이버 Enable
+publisher: "Microsoft" # 퍼블리셔(마이크로소프트 제공)
+product: "OMSGallery/ContainerInsights" # 프로덕트(컨테이너 인사이트)
+azure_policy_enabled: "true" # Azure 정책 
+secret_rotation_enabled: "true" # 시크릿 로테이션 
+secret_rotation_interval: "10080m" # 시크릿 로테이션 인터벌(7일 설정)
+###
+prod_node_max_pods_count: "110" # 쿠버네티스 사용자 노드 최대 파드 대수
+prod_node_pool_mode: "User" # 쿠버네티스 사용자 노드 풀 모드
+###
+# For Inference 쿠버네티스
+prod_inference_node_resorce_group: "PaaS-Prod-Inference-VMSS-RG" # 쿠버네티스 노드 풀 리소스 그룹
+prod_inference_k8s_name: "PaaS-Prod-Inference-K8S-1-27-7" # Inference 쿠버네티스 클러스터 이름
+prod_inference_k8s_dns_prefix: "inference-k8s" # Inference 쿠버네티스 DNS 프리픽스
+prod_inference_k8s_service_cidr: "10.22.0.0/16" # Inference 쿠버네티스 서비스 CIDR
+prod_inference_k8s_dns_service_ip: "10.22.0.10" # Inference 쿠버네티스 DNS 주소
+###
+prod_inference_agent_pool: "agentpool" # Inference 쿠버네티스 에이전트 풀 이름
+prod_inference_agent_pool_count: "1" # Inference 쿠버네티스 에이전트 풀 노드 대수
+prod_inference_agent_pool_vm_size: "Standard_D2s_v5" # Inference 쿠버네티스 에이전트 풀 가상 머신 스펙
+prod_inference_agent_node_label_prefix: "Environment" # Inference 쿠버네티스 에이전트 풀 노드 프리픽스
+prod_inference_agent_node_label: "prod-inference-agent" # Inference 쿠버네티스 에이전트 풀 노드 레이블
+###
+prod_inference_shared_node_min_count: "1" # inference 쿠버네티스 사용자 노드 풀 최소 노드 대수
+prod_inference_shared_node_max_count: "3" # inference 쿠버네티스 사용자 노드 풀 최대 노드 대수
+prod_inference_shared_node_max_pods_count: "50" # Inference shared 쿠버네티스 사용자 노드 최대 파드 대수
+prod_inference_shared_node_pool_mode: "User" # Inference shared 쿠버네티스 사용자 노드 풀 모드
+prod_inference_shared_node_pool: "ezpprdshared" # Inference shared 쿠버네티스 사용자 노드 풀 이름, 리눅스 노드 풀의 경우 최대 11자리, 윈도우 노드 풀 최대 6자리
+prod_inference_shared_node_vm_size: "Standard_D4ds_v5" # Inference shared 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod_inference_shared_node_pool_label_prefix_1: "environment" # ezpprdshared 노드 풀 레이블 프리픽스
+prod_inference_shared_node_pool_label_prefix_2: "product" # ezpprdshared 노드 풀 레이블 프리픽스
+prod_inference_shared_node_pool_label_prefix_3: "resource" # ezpprdshared 노드 풀 레이블 프리픽스
+prod_inference_shared_node_pool_label_prefix_4: "node-category" # ezpprdshared 노드 풀 레이블 프리픽스
+prod_inference_shared_node_pool_label_prefix_5: "service-category" # ezpprdshared 노드 풀 레이블 프리픽스
+prod_inference_shared_node_pool_label_1: "production" # ezpprdshared 노드 풀 레이블
+prod_inference_shared_node_pool_label_2: "ez-planet" # ezpprdshared 노드 풀 레이블
+prod_inference_shared_node_pool_label_3: "aks" # ezpprdshared 노드 풀 레이블
+prod_inference_shared_node_pool_label_4: "inference" # ezpprdshared 노드 풀 레이블
+prod_inference_shared_node_pool_label_5: "shared" # ezpprdshared 노드 풀 레이블
+###
+prod_inference_service_node_min_count: "2" # inference 쿠버네티스 사용자 노드 풀 최소 노드 대수
+prod_inference_service_node_max_count: "3" # inference 쿠버네티스 사용자 노드 풀 최대 노드 대수
+prod_inference_service_node_max_pods_count: "50" # Inference shared 쿠버네티스 사용자 노드 최대 파드 대수
+prod_inference_service_node_pool: "ezpprdsvc" # Inference 쿠버네티스 사용자 노드 풀 이름, 리눅스 노드 풀의 경우 최대 11자리, 윈도우 노드 풀 최대 6자리
+prod_inference_service_node_vm_size: "Standard_NC4as_T4_v3" # Inference 쿠버네티스 사용자 노드 풀 가상머신 스펙
+prod_inference_service_node_pool_taints: ["sku=gpu:NoSchedule"] # ezpprdsvc 노드 테인트
+prod_inference_service_node_pool_label_prefix_1: "environment" # ezpprdsvc 노드 풀 레이블 프리픽스
+prod_inference_service_node_pool_label_prefix_2: "product" # ezpprdsvc 노드 풀 레이블 프리픽스
+prod_inference_service_node_pool_label_prefix_3: "resource" # ezpprdsvc 노드 풀 레이블 프리픽스
+prod_inference_service_node_pool_label_prefix_4: "node-category" # ezpprdsvc 노드 풀 레이블 프리픽스
+prod_inference_service_node_pool_label_prefix_5: "service-category" # ezpprdsvc 노드 풀 레이블 프리픽스
+prod_inference_service_node_pool_label_1: "production" # ezpprdsvc 노드 풀 레이블
+prod_inference_service_node_pool_label_2: "ez-planet" # ezpprdsvc 노드 풀 레이블
+prod_inference_service_node_pool_label_3: "aks" # ezpprdsvc 노드 풀 레이블
+prod_inference_service_node_pool_label_4: "inference" # ezpprdsvc 노드 풀 레이블
+prod_inference_service_node_pool_label_5: "service" # ezpprdsvc 노드 풀 레이블
+###
+prod_inference_alert_action_group: "Prod-Inference-K8s-Alert-Group" # 알람 액션 그룹
+prod_inference_cpu_alert_short_name: "CpuAlert" # CPU 알람 Short 이름
+prod_inference_alert_email_admin: "Prod-Inference-k8sadmin" # 알람 메일 관리자
+prod_inference_alert_email_address: "hw038@laonpeople.com" # 알람 메일 주소
+prod_inference_cpu_alert_name: "Prod-Inference-K8s-Cpu-Alert" # CPU 알람 이름
+prod_inference_cpu_metric_namespace: "Microsoft.ContainerService/managedClusters" # CPU 메트릭 이름 스페이스
+prod_inference_cpu_metric_name: "node_cpu_usage_percentage" # CPU 메트릭 이름
+prod_inference_cpu_aggregate: "Average" # CPU 사용 합계
+prod_inference_cpu_operator: "GreaterThan" # CPU 오퍼레이터
+prod_inference_cpu_threshold: "80" # CPU 쓰레드홀드
+prod_inference_mem_alert_name: "Prod-Inference-K8s-Mem-Alert" # 메모리 알람 이름
+prod_inference_mem_metric_namespace: "Microsoft.ContainerService/managedClusters" # 메모리 메트릭 이름 스페이스
+prod_inference_mem_metric_name: "node_memory_working_set_percentage" # 메모리 메트릭 이름
+prod_inference_mem_aggregate: "Average" # 메모리 사용 합계
+prod_inference_mem_operator: "GreaterThan" # 메모리 오퍼레이터
+prod_inference_mem_threshold: "80" # 메모리 쓰레드홀드
+prod_inference_log_workspace_name: "Prod-Inference-K8s-log-workspace" # 로그 WorkSpace 이름
+prod_inference_log_workspace_name_sku: "PerGB2018" # 로그 Workspace SKU
+prod_inference_log_solution_name: "ContainerInsights" # 로드 솔루션 이름
+prod_inference_diag_name: "Prod-Inference-K8s-diagnose" # 진단 이름
+prod_inference_k8s_log: # 쿠버네티스 로깅
+- name: "cloud-controller-manager" # 컨트롤러 Manager
+- name: "cluster-autoscaler" # 클러스터 오토스케이러
+- name: "csi-azuredisk-controller" # csi disk 컨트롤러
+- name: "csi-azurefile-controller" # csi 파일 컨트롤러
+- name: "csi-snapshot-controller" # csi 스냅샷 컨트롤러
+- name: "kube-apiserver" # 쿠버네티스 API 서버
+- name: "kube-controller-manager" # 쿠버네티스 컨트롤러 Manager
+- name: "kube-scheduler" # 쿠버네티스 스케쥴러
+prod_inference_k8s_metric: # 쿠버네티스 메트릭
+- name: "AllMetrics" # 모든 메트릭
+prod_inference_k8s_metric_enabled: true # 메트릭 활성화
+
+# For Common 쿠버네티스 Private Endpoint
+prod_common_private_dns_zone: "ezplanet-prod.privatelink.koreacentral.azmk8s.io"

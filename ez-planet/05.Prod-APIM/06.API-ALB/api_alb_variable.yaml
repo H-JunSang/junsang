@@ -1,0 +1,70 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: PaaS-Shared-RG # For Prod Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Prod" # For Shared Resource Tags
+billing_prod_alb_pip_tag: Prod-APIM-ALB-PIP
+billing_prod_alb_tag: Prod-APIM-ALB
+
+# For Shared virtual network variable
+shared_vnet: "PaaS-Shared-vNET" # For Shared Vnet Name
+
+# For Prod APIM ALB Subnets Ids To Assign To L7 Loadbalancer
+prod_apim_alb_subnet: Shared-Prod-APIM-ALB-Subnet # For Prod Vnet IT Common Subnet name
+
+### For Key Vault
+keyvault_name: EZPlanetPaaSKeyvault # Key vault 리소스 이름(키볼트의 경우, 퍼블릭 공간에 배포되므로 이름은 고유해야 하며 영문, 숫자, 특수문자 - 와 조합하여 최소 3자리에서 최대 24자리수까지 지정 가능하며 프리픽스 지정할 경우 24자리 넘어가지 않도록 주의)
+key_vault_cert_name: "laon-ezplanet-com" # 키볼트에 저장된 인증서 이름
+shared_user_managed_identity: EZPlanet-Paas-Shared-Mid-01 # 키볼트와 연동된 관리 Identity
+user_identity_type: "UserAssigned" # 관리 Identity 타입
+
+# For L7 로드밸런서 속성 변수
+allocate_public_ip: "Static" # L7 로드밸런서 Public IP 타입
+public_ip_sku: "Standard" # L7 로드밸런서 Public IP SKU
+frontend_port_name: "443" # 프론트 엔드 포트 
+frontend_protocol: "Https" # 프론트 엔드 프로토콜
+frontend_ip_configuration_name: "apiappgwIPv4" # Public IP 이름
+backend_address_pool_name: apim-pool # 백엔드 풀 이름
+backend_protocol: "Https" # 백엔트 프로토콜
+backend_port: "443" # 백엔드 포트 
+sku_tier: "Standard_v2" # L7 로드밸런서 SKU
+min_capacity: "2" # 최소 로드밸런서 유닛 
+max_capacity: "4" # 최대 로드밸런서 유닛 
+request_timeout: "60" # 요청 타임아웃 
+routing_priority: "100" # 라우팅 우선 순위 
+routing_rule: apim-routing-rule # 라우팅 룰
+routing_rule_type: "Basic" # 라우팅 룰 타입
+http_setting_name: apim-pool-configration # 백엔드 설정
+listener_name: apim-front-listen # 리슨너 
+enable_http2: true # HTTP2 
+cookie_affinity: "Disabled" # 쿠키 어피니티
+
+# For Prod APIM L7 로드밸런서 Health Probe
+probe_name: apim-health-probe # 백엔트 상태 체크 이름
+probe_protocol: "Https" # 상태 체크 프로토콜
+probe_interval: "30" # 상태 체크 인터벌
+probe_timeout: "30" # 상태 체크 타임아웃
+probe_unhealty_threshold: "3" # 상태 체크 Threshold
+probe_path: "/status-0123456789abcdef" # 백엔드 상태 체크 경로
+probe_pick_host_name_from_backend_http_settings: true # 상태 체크에서 백엔드 호스트 이름 Pickup
+pick_host_name_from_backend_address: true # 백엔드 주소에서 호스트 이름 Pickup
+
+# For Prod APIM L7 로드밸런서
+prod_apim_l7_pip: Shared-Prod-APIM-ALB-PIP-01 # L7 로드밸런서 퍼블릭 IP 이름
+prod_apim_l7_gateway_name: Shared-Prod-API-ALB-01 # L7 로드밸런서 이름
+prod_apim_l7_ip_name: prodgateway # L7 로드밸런서 사설 IP 이름
+prod_apim_backend_pool_fqdns: ["api.laon-ezplanet.net"] # 백엔드 도메인 주소
+
+# 인증서 이름
+prod_apim_alb_cert_name: laon-ezplanet-com # 애플리케이션 게이트웨이 인증서(만료날자 표기)
+
+
+
+
+
+

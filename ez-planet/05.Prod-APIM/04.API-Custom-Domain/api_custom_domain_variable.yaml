@@ -1,0 +1,22 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Shared Resource Group, location and resource tags
+shared_rg: EZ-Planet-PaaS-Shared-RG # 리소스 그룹
+
+# Shared Vnet
+shared_vnet: EZ-Planet-PaaS-Shared-vNET # 가상 네트워크 이름
+
+# Shared Prod APIM Subnet
+prod_apim_subnet: Shared-Prod-APIM-Subnet # 서브넷 이름
+
+# For Prod API Management
+shared_prod_apim_name: Shared-Prod-Apim-Gateway-01
+hostname: "api.laon-ezplanet.net" # APIM 도메인 주소
+default_ssl_binding: true # SSL 바인딩 여부
+negotiate_client_certificate: true # 클라이언트 인증서 negotiate 여부
+
+### For Key Vault
+keyvault_name: EZPlanetPaaSKeyvault # Key vault 리소스 이름(키볼트의 경우, 퍼블릭 공간에 배포되므로 이름은 고유해야 하며 영문, 숫자, 특수문자 - 와 조합하여 최소 3자리에서 최대 24자리수까지 지정 가능하며 프리픽스 지정할 경우 24자리 넘어가지 않도록 주의)
+key_vault_cert_name: "laon-ezplanet-net" # 키볼트에 저장된 인증서 이름
+shared_user_managed_identity: EZPlanet-Paas-Shared-Mid-01 # 키볼트와 연동된 관리 Identity

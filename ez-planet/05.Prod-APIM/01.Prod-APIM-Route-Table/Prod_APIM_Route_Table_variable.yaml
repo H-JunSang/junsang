@@ -1,0 +1,42 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# Shared Resource Group
+shared_rg: EZ-Planet-PaaS-Shared-RG # 리소스 그룹
+
+# Shared Route Table Tags
+shared_tag_creator: "Laonpeople" 
+shared_tag_environment: "Prod"
+billing_tag: Shared-Prod-APIM-RT
+
+# Shared Vnet
+shared_vnet: EZ-Planet-PaaS-Shared-vNET # 가상 네트워크 이름
+
+# Prod APIM Subnet
+prod_apim_subnet: Shared-Prod-APIM-Subnet # 서브넷 이름
+prod_apim_subnet_prefixs: ["10.120.68.0/27"]
+
+# Prod APIM ALB Subnet
+prod_apim_alb_subnet: Shared-Prod-APIM-ALB-Subnet # 서브넷 이름
+prod_apim_alb_subnet_prefixs: ["10.120.68.32/27"]
+
+# For Prod-APIM Route Table
+prod_shared_apim_route_table: Shared-Prod-APIM-RT # 라우팅 테이블 이름
+
+# For Prod-APIM Route Entries
+prod_apim_routes: # For Prod Routes
+- name: PaaS-Prod-Common-Route
+  address_prefix: "10.122.0.0/18"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+- name: PaaS-Prod-Inference-Route
+  address_prefix: "10.122.128.0/18"
+  next_hop_type: "VirtualAppliance"
+  next_hop_in_ip_address: "10.110.0.4"
+
+
+# Shared 네트워크 정보
+shared_virtual_network_id: /subscriptions/d8873738-1e0a-4688-9b53-5ce13f0073a9/resourceGroups/EZ-Planet-PaaS-Shared-RG/providers/Microsoft.Network/virtualNetworks/EZ-Planet-PaaS-Shared-vNET

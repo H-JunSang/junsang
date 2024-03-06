@@ -1,0 +1,28 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# For Shared Resource Group, location and resource tags
+sharedrg: EZ-Planet-PaaS-Shared-RG # For Prod Resource Group
+shared_tag_creator: "Laonpeople" # For Shared Resource Tags
+shared_tag_environment: "Prod" # For Shared Resource Tags
+billing_prod_apim_alb_tag: Prod-APIM-ALB-NSG
+billing_prod_apim_tag: Prod-APIM-NSG
+
+# For Shared virtual network variable
+shared_vnet: "EZ-Planet-PaaS-Shared-vNET" # For Shared Vnet Name
+
+# For Prod APIM ALB Subnets Ids To Assign To L7 Loadbalancer
+prod_apim_alb_subnet: Shared-Prod-APIM-ALB-Subnet # For Shared Vnet APIM ALB Subnet name
+
+# For Prod APIM Subnets Ids To Assign To APIM
+prod_apim_subnet: Shared-Prod-APIM-Subnet # For Prod Vnet APIM Subnet name
+
+# Prod APIM ALB Security Groups
+prod_apim_alb_nsg_name: Shared-Prod-APIM-ALB-NSG
+
+# Prod APIM Security Groups
+prod_apim_nsg_name: Shared-Prod-APIM-NSG
+

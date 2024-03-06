@@ -1,0 +1,35 @@
+ # For Region
+location: koreacentral # For Region
+
+# For Prefix Variable
+prefix: EZ-Planet # For Prefix Variable
+
+# Shared Resource Group
+shared_rg: EZ-Planet-PaaS-Shared-RG # 리소스 그룹
+
+# Shared Route Table Tags
+shared_tag_creator: "Laonpeople" 
+shared_tag_environment: "Prod"
+
+# Shared Vnet
+shared_vnet: EZ-Planet-PaaS-Shared-vNET # 가상 네트워크 이름
+
+# Prod APIM Subnet
+prod_apim_subnet: Shared-Prod-APIM-Subnet # 서브넷 이름
+
+# Prod APIM ALB Subnet
+prod_apim_alb_subnet: Shared-Prod-APIM-ALB-Subnet # 서브넷 이름
+
+# For Prod-APIM Route Table
+prod_shared_apim_route_table: Shared-Prod-APIM-RT # 라우팅 테이블 이름
+
+# For Api Management Endpoint Route
+default_route_name: Shared-Prod-APIM-Default-Route
+default_route_address_prefix: "ApiManagement.KoreaCentral"
+default_route_next_hop_type: "Internet"
+
+# For SP-Prod Network Route
+sp_prod_route_name: Service-Platform-Prod-Route
+sp_prod_address_prefix: "10.124.0.0/16"
+sp_prod_next_hop_type: "VirtualAppliance"
+sp_prod_next_hop_in_ip_address: "10.110.0.4"
